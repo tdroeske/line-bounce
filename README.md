@@ -2,6 +2,7 @@ Line Bounce
 ===========
 
 Greetings,
+
 You have reached our awesome, new GitHub repo! In this README file, I will be describing what is, in my honest opinion, the best way to use Git that will avoid most of those nasty merge conflicts and to make it easy to see who wrote what code.
 
 -Max
