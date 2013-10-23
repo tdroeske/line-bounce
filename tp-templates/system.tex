@@ -1,0 +1,426 @@
+\chapter{System Test Plan}
+\section{Frontend (what the user sees)}
+\subsection{Transitions}
+\subsection{Pages}
+\subsection{Gameview}
+\subsubsection{Scrolling (In-Game)}
+\section{Backend - Admin}
+\section{Backend - Game}
+\section{TSS-01 for Movement Mechanics }
+\begin{itemize}
+\item Goal: Determine that the jumping mechanics for the character in Line
+Bounce work robustly and accurately. 
+\item Resources Required: User (tester), iPhone, Android Phone, Computer,
+Time. 
+\item Structure of the Test Plan (Applicable TES list): 
+
+\begin{itemize}
+\item FUN-01 (game start movement) 
+\item pausing (FUN-18) 
+\item bouncing behavior 
+
+\begin{itemize}
+\item FUN-02, FUN-45 (top of lines, velocity change) 
+\item FUN-05, FUN-45 (bottom of lines, velocity change) 
+\item FUN-06, FUN-19 (bouncing off walls, velocity change) 
+\item FUN-23 (platform size affecting velocity) 
+\end{itemize}
+\item off-screen movement 
+
+\begin{itemize}
+\item FUN-03 (falling off (bottom of) screen) 
+\item FUN-04 (moving up (top of) screen) 
+\end{itemize}
+\item collisions 
+
+\begin{itemize}
+\item FUN-11, FUN-22 (power-up collection, activation, -doesn\textquoteright{}t
+affect movement-) 
+\item FUN-03 (touching enemies falling off screen ending game) \Circle{}
+FUN-46 (movement affecting score) 
+\end{itemize}
+\end{itemize}
+\item Resources needed: 
+
+\begin{itemize}
+\item Relevant devices (iPhone/iPad, Android, facebook accessable PC and
+web browser) 
+\item Timing software 
+\item Trajectory measuring software
+\end{itemize}
+\end{itemize}
+
+\subsection{TES-1.1: Game Start State }
+\begin{itemize}
+\item Goal: Show that the avatar, at the start of a game, will start at
+the top center of the user\textquoteright{}s screen and accelerate
+in the -y direction only 
+
+\begin{itemize}
+\item Set a time bound (?) 
+\end{itemize}
+\item Testcases: 
+
+\begin{itemize}
+\item Try starting game with several different avatar/power up combinations 
+\item Try pausing game, ending it, and then starting it again (does the
+game state get cleared when starting new game?) 
+\end{itemize}
+\item Capture the output 
+
+\begin{itemize}
+\item Measure elapsed time 
+\item Measure start location 
+\item Measure acceleration 
+\end{itemize}
+\item Evaluate the output data 
+
+\begin{itemize}
+\item compare to expected data (in terms of the goals) 
+\end{itemize}
+\item Generate report 
+
+\begin{itemize}
+\item Produce summary of generated reports 
+\item Evaluate summary with respect to goal
+\end{itemize}
+\end{itemize}
+
+\subsection{TES-1.2: Pausing }
+\begin{itemize}
+\item Goal: Show that, while in a pause state, all moving objects halt in
+place, but exiting the pause state will restore original movement 
+
+\begin{itemize}
+\item resumes gameplay in a coherent fashion that will not break the user\textquoteright{}s
+immersion in the game 
+\item objects originally moving in a certain trajectory will not suddenly
+change trajectory for no reason (see TES-1.3) 
+\item Game state will be saved (see TES 2.1) 
+\end{itemize}
+\item Testcases: 
+
+\begin{itemize}
+\item try tapping the pause/resume button on several different occasions
+coinciding with various events 
+\item try tapping the button at various time interval increments (ex. 50
+ms, 1 s, 2 s, \ldots{} ) 
+\end{itemize}
+\item Capture the output 
+
+\begin{itemize}
+\item measure trajectories before entering/after leaving pause state 
+\item measure elapsed response time and record qualitative response behavior 
+\end{itemize}
+\item Evaluate the numeric result 
+
+\begin{itemize}
+\item compare trajectories 
+\item evaluate response time and behavior with those expected 
+\end{itemize}
+\item Generate report 
+
+\begin{itemize}
+\item Produce summary of generated reports with regard to data collection 
+\item Evaluate summary with respect to goal
+\end{itemize}
+\end{itemize}
+
+\subsection{TES-1.3: Bouncing Behavior }
+\begin{itemize}
+\item Goal: Show that the avatar will bounce off of objects in game, that
+its trajectory changes in a fun and intuitive fashion 
+
+\begin{itemize}
+\item avatar will only change from -y to +y velocity when colliding with
+the top of drawn lines (see FUN-02, FUN-45) 
+\item no component of avatar\textquoteright{}s velocity will be affected
+upon colliding with the bottoms of lines (see FUN-05, FUN-45) 
+\item side walls (left and right) are \textquotedblleft{}solid\textquotedblright{}:
+avatar will reverse x velocity upon collision (see FUN-06, FUN-19) 
+\item shorter drawn platforms will give more of a boost than longer drawn
+ones (see FUN-23) 
+\end{itemize}
+\item Testcases: 
+
+\begin{itemize}
+\item test various different environments in isolated conditions from the
+bullets described in goals (ex. avatar with a velocity such that it
+will collide with the top of a line only) 
+\item test various different environments in various conditions from the
+bullets described in goals (ex. avatar with a velocity such that it
+will collide with the bottom of a line after colliding with the top
+of a line) 
+\item test the above two with different combinations of avatars, power-ups
+that are in active/inactive statuses, arbitrarily placed lines (ranging
+from extremely condensed to sparsely place ones) 
+\end{itemize}
+\item Capture the output 
+
+\begin{itemize}
+\item measure trajectories before/after each collision 
+\item measure elapsed response time and record qualitative response behavior 
+\end{itemize}
+\item Evaluate the numeric result 
+
+\begin{itemize}
+\item organize data and compare trajectories with relevant goals 
+\item evaluate response time and behavior with relevant goals 
+\end{itemize}
+\item Generate report 
+
+\begin{itemize}
+\item Produce summary of generated reports with regard to data collection 
+\item Evaluate summary with respect to goal
+\end{itemize}
+\end{itemize}
+
+\subsection{TES-1.4: Off-Screen Movement}
+
+\subsection{TES-1.5: Collisions}
+
+\subsection{TES-1.6: Movement Affecting Score}
+
+\section{TSS-02 for Game State Mechanics }
+\begin{itemize}
+\item Goal: Determine that the mechanics that govern when the game is started
+and lost work robustly and accurately.
+\item Resources Required: 
+
+\begin{itemize}
+\item User Hours 
+\item iPhone 
+\item Android Phone 
+\item Computer 
+\end{itemize}
+\item Structure of Test Plan: 
+
+\begin{itemize}
+\item Pause Button Pauses Game: FUN-18 
+
+\begin{itemize}
+\item Player can end, resume or restart game from Pause menu 
+\end{itemize}
+\item User loses when touching lethal hazard 
+
+\begin{itemize}
+\item Contact with enemies: ACC-07 
+\item Falling through bottom: FUN-03 
+\end{itemize}
+\item Results of changing application state 
+
+\begin{itemize}
+\item Backgrounding the app mid-playthrough pauses game: FUN-40 
+\item Exiting the app mid-playthrough loses the game: FUN-41 
+\end{itemize}
+\item In an optimal game the player climbs forever: ACC-05 
+
+\begin{itemize}
+\item Game should not transition to an end-state by climbing too high
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsection{TES-2.1: Pause Menu }
+\begin{itemize}
+\item Goal: Show that the the Player can pause the game at any time during
+a playthrough, which freezes game state. Show that the user can terminate
+the game or restart their playthrough from the pause menu.
+\item Test cases: 
+
+\begin{itemize}
+\item User starts game, presses pause button. 
+\item From pause menu, user attempts to quit game. 
+\item From pause menu, user attempts to restart game.
+\end{itemize}
+\item Capture the output 
+
+\begin{itemize}
+\item Collect data on how game state responded to operations 
+\end{itemize}
+\item Evaluate the result: 
+
+\begin{itemize}
+\item Pressing pause should bring up pause menu. 
+\item Attempting to quit game should exit from game, to game over screen. 
+\item Attempting to restart game should begin a new playthrough. 
+\end{itemize}
+\item Generate report 
+
+\begin{itemize}
+\item Produce summary of generated reports with regard to data collection 
+\item Evaluate summary with respect to goal
+\end{itemize}
+\end{itemize}
+
+\subsection{TES-2.2: Lethal Hazards }
+\begin{itemize}
+\item Goal: Show that contact of the player\textquoteright{}s avatar with
+lethal hazards results in a lost game state as intended. 
+\item Test cases: 
+
+\begin{itemize}
+\item User\textquoteright{}s avatar makes contact with enemy avatar. 
+\item User\textquoteright{}s avatar makes contact with bottom of screen. 
+\end{itemize}
+\item Capture the output 
+
+\begin{itemize}
+\item Collect data on how game state responded to operations 
+\end{itemize}
+\item Evaluate the result: 
+
+\begin{itemize}
+\item Both cases should result in a lost game state. 
+\end{itemize}
+\item Generate report 
+
+\begin{itemize}
+\item Produce summary of generated reports with regard to data collection 
+\item Evaluate summary with respect to goal
+\end{itemize}
+\end{itemize}
+
+\subsection{TES-2.3: Change Application State }
+\begin{itemize}
+\item Goal: Show that changing the state of the application mid-playthrough
+produces the intended result relative to the state of the current
+playthrough. 
+\item Test cases: 
+
+\begin{itemize}
+\item Background the Line Bounce application mid-playthrough. 
+\item Exit the Line Bounce application mid-playthrough. 
+\end{itemize}
+\item Capture the output 
+
+\begin{itemize}
+\item Collect data on how game state responded to operations 
+\end{itemize}
+\item Evaluate the result: 
+
+\begin{itemize}
+\item Backgrounding the app mid-playthrough should pause the game, and bring
+up the Pause Menu. \Circle{} Exiting the app mid-playthrough should
+exit the game. 
+\end{itemize}
+\item Generate Report 
+
+\begin{itemize}
+\item Produce summary of generated reports with regard to data collection 
+\item Evaluate summary with respect to goal
+\end{itemize}
+\end{itemize}
+
+\subsection{TES-2.4: Climbing High }
+\begin{itemize}
+\item Goal: Show that climbing to a high altitude by itself does not change
+the game state. 
+\item Test cases: 
+
+\begin{itemize}
+\item In a playthrough, climb to 10{[}a{]},000 feet. 
+\item In a playthrough, climb to 100,000 feet. 
+\end{itemize}
+\item Capture the output 
+
+\begin{itemize}
+\item Collect data on how game state responded to operations 
+\end{itemize}
+\item Evaluate the result: 
+
+\begin{itemize}
+\item In both cases, no matter how high the avatar climbs, game should not
+end. 
+\end{itemize}
+\item Generate Report 
+
+\begin{itemize}
+\item Produce summary of generated reports with regard to data collection 
+\item Evaluate summary with respect to goal
+\end{itemize}
+\end{itemize}
+
+\section{TSS-03 for Menus{[}b{]} }
+\begin{itemize}
+\item Goal: Determine that the menus function according to the requirements.
+(Note: The Store menus will be covered in the Store TSS.)
+\item Resources Required: 
+
+\begin{itemize}
+\item User Hours 
+\item iPhone 
+\item Android Phone 
+\item Computer 
+\item Internet Connection 
+\item Server
+\end{itemize}
+\item Structure of the Test Plan: 
+
+\begin{itemize}
+\item Menu features are present and work correctly 
+
+\begin{itemize}
+\item The Main Menu should feature many options: FUN-09 
+\item The Settings Menu should allow users to change options: FUN-17 
+\item The start screen will give the option of connecting to Facebook before
+going to the Main Menu: FUN-33 
+\item The user can logout of Facebook from the Settings Menu: FUN-36 
+\item Pressing the pause button will bring up a menu that allows the user
+to perform a few actions: FUN-39 
+\item Buttons in menus should always perform desired functionality: ROB-08 
+\end{itemize}
+\item The menu will have fast response time: PER-04
+\end{itemize}
+\end{itemize}
+
+\subsection{TES-3.1: Menu features are present and function correctly }
+\begin{itemize}
+\item Goal: Show that the menu features are present in the required locations
+and perform the required functions across all platforms. 
+\item Test cases: 
+
+\begin{itemize}
+\item Check for presence of all menu features 
+
+\begin{itemize}
+\item User navigates the game and menus 
+\end{itemize}
+\item Check functionality of all menu features 
+
+\begin{itemize}
+\item User tries to use menu features manually 
+\item User writes and runs test code to check back-end functionality 
+\end{itemize}
+\end{itemize}
+\item Capture the output 
+\item Evaluate the result: 
+
+\begin{itemize}
+\item All required menu features should be present in the required locations 
+\item All menu features should function as required 
+\end{itemize}
+\item Generate report
+\end{itemize}
+
+\subsection{TES-3.2: The menu will have fast response time }
+\begin{itemize}
+\item Goal: Show that the menu feature response times satisfy the performance
+requirements stated in PER-04. 
+\item Test cases: 
+
+\begin{itemize}
+\item Check the response time of each menu feature 
+
+\begin{itemize}
+\item User writes and runs test code that times each menu function 
+\end{itemize}
+\end{itemize}
+\item Capture the output 
+\item Evaluate the result: 
+
+\begin{itemize}
+\item All menu features should have a response time of under 0.25 seconds
+(PER-04 as of 10/18/13) 
+\end{itemize}
+\item Generate report \end{itemize}
