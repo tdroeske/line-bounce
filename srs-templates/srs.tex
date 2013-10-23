@@ -21,7 +21,7 @@
 \usepackage{stys/enumerate}
 \usepackage{graphicx}
 \usepackage{stys/moreverb}
-\usepackage[anchorcolor=black,bookmarksnumbered=true,bookmarksopen=true,linkcolor=black,menucolor=black,pagecolor=black,linkbordercolor=1 1 1]{hyperref}
+\usepackage[anchorcolor=black,bookmarksnumbered=true,bookmarksopen=true,linkcolor=black,menucolor=black,pagecolor=black,linkbordercolor={1 1 1}]{hyperref}
 \usepackage{stys/placeins}
 \usepackage{stys/longtable}
 
@@ -38,7 +38,7 @@
 
 % Document revision/release number
 \def \revision  {0.1}
-\def \vdate {1 April 2010}
+\def \vdate {26 September 2013}
 
 
 \addtolength{\oddsidemargin}{-.2in}
@@ -58,17 +58,17 @@
 \begin{center}
 \begin{figure}[h]
 	\begin{center}
-    	\includegraphics[height=45mm]{figs/UOM_logo}
+    	\includegraphics[height=45mm]{figs/UMASS_logo}
 	\end{center}
 \end{figure}
 
-\Large\rmfamily{Department of \\ Computer Science and Software Engineering} \\
+\Large\rmfamily{Department of \\ Computer Science} \\
 \vspace*{35mm}
 \huge\sffamily{Software Requirements Specification}\\
 \vspace*{5mm}
 \large\sffamily{for}\\
 \vspace*{5mm}
-\Huge\sffamily{Project Name}\\
+\Huge\sffamily{Line Bounce}\\
 \vspace*{20mm}
 \Large\rmfamily{Version: \revision} \\
 \small{\vdate}\\
@@ -109,20 +109,14 @@
 % Start of main body of the document
 % ============================
 \input{introduction}
-\input{overall_description}
-\input{system_features}
-\input{external_interfaces}
+\input{functional_requirements}
 \input{nonfunctional_requirements}
-\input{other_requirements}
-\input{sample_chapter}
 
 % ============================
 % Start of appendices
 % ============================
 \appendix
 \input{glossary}
-\input{analysis_models}
-\input{issues_list}
 
 
 % ============================
