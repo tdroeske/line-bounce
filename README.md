@@ -7,6 +7,17 @@ You have reached our awesome, new GitHub repo! In this README file, I will be de
 
 -Max
 
+Latex Quickstart
+----------------
+WYSIWYG (What you see is what you get) editor for latex is called Lyx and it is cross platform.
+
+http://www.lyx.org/
+
+Here's some more links on latex that I was given back in the day. 
+http://en.wikipedia.org/wiki/LaTeX
+http://en.wikibooks.org/wiki/LaTeX/Collaborative_Writing_of_LaTeX_Documents
+http://mirror.unl.edu/ctan/info/lshort/english/lshort.pdf
+
 Git (a work in progress)
 ------------------------
 
