@@ -1,0 +1,6 @@
+# Ignore OSX file-keeping files 
+.DS_Store
+
+# Ignore swap files
+*~
+*.swp
